@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AutoPrime — Homepage (Prototype)</title>
   <style>
+    html {
+scroll-behavior: smooth;
+}
+[id] {
+scroll-margin-top: 120px;
+}
     :root{
       --green:#1ea04a;
       --dark:#1f1f1f;
@@ -31,7 +37,19 @@
   z-index:10; 
   position:relative;
 }
+.nav a {
+  display: inline-block;
+  padding: 10px 18px;
+  color: #ffffff;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
 
+.nav a:hover {
+  background: #168a3f;
+}
 .nav-left {
   display: flex;
   align-items: center;
@@ -71,26 +89,6 @@
   border-radius:30px;
   font-weight:600;
   text-decoration:none;
-}
-
-.nav-link{
-  color:white;
-  opacity:0.9;
-  text-decoration:none;
-  display:flex;
-  align-items:center;
-  gap:6px;
-}
-
-.nav-icon{
-  color:white;
-  text-decoration:none;
-  font-size:16px;
-}
-
-.icon{
-  height:18px;
-  opacity:0.9;
 }
 
 
@@ -161,22 +159,14 @@
         <div class="search-bar">
       <input type="text" placeholder="Cari mobil..." />
     </div>
-
+    <a href="#hero">Home</a>
     <a href="https://www.oto.com/diler-mobil-bekas/jakarta-utara/auto-prime-30" class="pill">
       <span style="font-size:14px;">🚗</span> All stock
-    </a>
-    <!-- Gak Ada certifikat yang ada  -->
-    <a href="#" class="nav-link">
-      <span style="font-size:14px;">🔰</span> Auto Prime Certified
-    </a>
-    <!-- Gak Ada cabang yang ada dan gak ketemu -->
-    <a href="#" class="nav-link">
-      <span style="font-size:14px;">📍🗺️</span> Cabang
-    </a>
-    <!-- Gak Ada artikel tentang auto prime -->
-    <a href="#" class="nav-link">
-      <span style="font-size:14px;">📰</span> Article
-    </a>
+<a href="#mobil-pilihan"><span style="font-size:14px;">🚗</span> Mobil</a>
+<a href="#lokasi"><span style="font-size:14px;">📍🗺️</span>Cabang</a>
+<a href="#harga"><span style="font-size:14px;">💲</span>Harga</a>
+<a href="#artikel"><span style="font-size:14px;">📰</span>Artikel</a>
+<a href="#faq"><span style="font-size:14px;">💬</span>FAQ</a>
   </div>
 
   <div class="nav-right">
@@ -191,7 +181,8 @@
   <!-- Pilihan Mobil Bekas -->
   <main>
     <section class="container">
-      <h2>Mobil Pilihan <small style="float:right;color:var(--green);font-size:14px">Lihat Semua</small></h2>
+      <div class="scroll-container">(isi cards mobil)</div>
+      <h2 id="mobil-pilihan">Mobil Pilihan <small style="float:right;color:var(--green);font-size:14px">Lihat Semua</small></h2>
       <p class="lead">Rekomendasi · Harga Terendah · Harga Tertinggi · Mobil Premium</p>
       <div class="grid">
         <article class="card">
@@ -222,7 +213,8 @@
       </div>
       
       <!-- Lokasi -->
-      <h2 style="margin-top:44px">Daftar Lokasi Kami <small style="float:right;color:var(--green);font-size:14px">Lihat Semua</small></h2>
+       <div class="scroll-container">(isi Lokasi)</div>
+      <h2 id="lokasi" style="margin-top:44px">Daftar Lokasi Kami <small style="float:right;color:var(--green);font-size:14px">Lihat Semua</small></h2>
       <p class="lead">Temukan informasi detail cabang kami di kota kamu</p>
       <div class="locations">
         <div class="card loc-card">
@@ -248,7 +240,8 @@
       </div>
 
       <!-- Penjualan Mobilnya -->
-      <h2 style="margin-top:44px">Mobil Sesuai Harga <small style="float:right;color:var(--green);font-size:14px">Lihat Semua</small></h2>
+       <div class="scroll-container">(isi harga)</div>
+      <h2 id="harga" style="margin-top:44px">Mobil Sesuai Harga <small style="float:right;color:var(--green);font-size:14px">Lihat Semua</small></h2>
       <p class="lead">Di bawah 150 Juta · 150 - 200 Juta · 200 - 300 Juta · Di atas 300 Juta</p>
       <div class="grid">
         <article class="card">
@@ -272,7 +265,8 @@
       </div>
        
       <!-- Testimoni/Review -->
-      <h2 style="margin-top:44px">Testimoni Pelanggan</h2>
+       
+      <h2  style="margin-top:44px">Testimoni Pelanggan</h2>
       <p class="lead">Kepercayaan mereka menjadikan AUTO PRIME sebagai pilihan terbaik</p>
       <div class="testi">
         <div class="quote card"><img src="Ful (1).png" alt="" class="quote card"> <br><strong>Jean "Degaré" Fromage</strong><div style="color:var(--muted);margin:8px 0">Good condition</div><div>⭐️⭐️⭐️⭐️⭐️</div></div>
@@ -294,7 +288,8 @@
       </section>
 
      <!-- Artikel -->
-<h2 style="margin-top:44px">Artikel Terbaru</h2>
+      <div class="scroll-container">(isi article)</div>
+<h2 id="artikel" style="margin-top:44px">Artikel Terbaru</h2>
 
 <div class="articles">
 
@@ -322,7 +317,8 @@
 </div>
 
       <!-- FAQ -->
-      <h2 style="margin-top:44px">FAQ Seputar AUTO PRIME</h2>
+       <div class="scroll-container">(isi faq)</div>
+      <h2 id="faq" style="margin-top:44px">FAQ Seputar AUTO PRIME</h2>
       <div class="faq" style="margin-top:12px">
         <div class="faq-card">Apakah Semua mobil yang dijual oleh
         Auto Prime bebas Banjir dan Kecelakaan
